@@ -17,13 +17,12 @@ import com.formdev.flatlaf.FlatDarculaLaf;
 import com.formdev.flatlaf.FlatDarkLaf;
 import com.formdev.flatlaf.FlatIntelliJLaf;
 import com.formdev.flatlaf.FlatLightLaf;
-import java.awt.Font;
-import java.awt.GraphicsEnvironment;
+
+import javax.swing.*;
+import javax.swing.plaf.FontUIResource;
+import java.awt.*;
 import java.io.PrintWriter;
 import java.io.StringWriter;
-import javax.swing.UIManager;
-import javax.swing.UnsupportedLookAndFeelException;
-import javax.swing.plaf.FontUIResource;
 
 public class Main {
   /**
@@ -32,6 +31,14 @@ public class Main {
    * @param args Optional arguments.
    */
   public static void main(String[] args) {
+    System.setProperty("Xmx", "10G");
+    System.setProperty("Xms", "10G");
+    System.setProperty("sun.java2d.noddraw", "true");
+    System.setProperty("sun.java2d.pmoffscreen", "false");
+    System.setProperty("sun.java2d.ddoffscreen", "false");
+    System.setProperty("UseConcMarkSweepGC", "true");
+    System.setProperty("CompileThreshold", "5000");
+
     System.setProperty("apple.awt.application.name", BuildInfo.name);
     try {
       if (!GraphicsEnvironment.isHeadless()) {
@@ -46,9 +53,9 @@ public class Main {
             new FontUIResource("SansSerif", Font.BOLD, AppPreferences.getScaled(12)));
       }
     } catch (ClassNotFoundException
-        | UnsupportedLookAndFeelException
-        | IllegalAccessException
-        | InstantiationException e) {
+             | UnsupportedLookAndFeelException
+             | IllegalAccessException
+             | InstantiationException e) {
       e.printStackTrace();
     }
 

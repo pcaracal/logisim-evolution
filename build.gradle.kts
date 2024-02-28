@@ -36,9 +36,9 @@ dependencies {
   implementation("org.drjekyll:colorpicker:1.4.5")
   implementation("at.swimmesberger:swingx-core:1.6.8")
   implementation("org.scijava:swing-checkbox-tree:1.0.2")
-  implementation("org.slf4j:slf4j-api:2.0.11")
-  implementation("org.slf4j:slf4j-simple:2.0.11")
-  implementation("com.formdev:flatlaf:3.3")
+  implementation("org.slf4j:slf4j-api:2.0.12")
+  implementation("org.slf4j:slf4j-simple:2.0.12")
+  implementation("com.formdev:flatlaf:3.4")
   implementation("commons-cli:commons-cli:1.6.0")
   implementation("org.apache.commons:commons-text:1.11.0")
 
